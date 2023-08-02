@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\ClickAble;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lmao', function (Request $request) {
+    return $request->key1.' '.$request->key2;
+});
+
+Route::get('/testing', function() {
+    return view('testing', [
+        'key1' => 'value1',
+        'ClickAbleLists' => ClickAble::onClick()
+    ]);
+});
+
