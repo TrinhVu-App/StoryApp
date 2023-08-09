@@ -18,7 +18,7 @@ class TouchableFactory extends Factory
     {
         return [
             'pageID' => $this->faker->numberBetween(1, 100),
-            'name' => $this->faker->word(),
+            'textID' => $this->faker->numberBetween(1, 100),
             'imageID' => $this->faker->numberBetween(1, 10),
             'audioID' => $this->faker->numberBetween(1,35),
             'width' => $this->faker->randomNumber(3, true),
