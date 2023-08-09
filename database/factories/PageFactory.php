@@ -17,7 +17,7 @@ class PageFactory extends Factory
     public function definition(): array
     {
         return [
-            'text' => $this->faker->sentence(),
+            'textID' => $this->faker->numberBetween(1, 100),
             'storyID' => $this->faker->numberBetween(1, 10),
             'audioID' => $this->faker->numberBetween(1,35),
             'imageID' => $this->faker->numberBetween(1, 10),
