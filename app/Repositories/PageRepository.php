@@ -50,7 +50,7 @@ class PageRepository implements PageRepositoryInterface {
     public function createPage(Request $request)
     {
         $newPage = Page::create([
-            'text' => $request->text,
+            'textID' => $request->textID,
             'storyID' => $request->storyID,
             'audioID' => $request->audioID,
             'imageID' => $request->imageID,
@@ -69,7 +69,7 @@ class PageRepository implements PageRepositoryInterface {
         $page = Page::find($id);
         if ($page) {
             $page->update([
-                'text' => $request->text,
+                'textID' => $request->textID,
                 'storyID' => $request->storyID,
                 'audioID' => $request->audioID,
                 'imageID' => $request->imageID,

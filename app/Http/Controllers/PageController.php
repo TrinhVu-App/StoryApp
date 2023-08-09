@@ -38,7 +38,7 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'text' =>  'required',
+            'textID' =>  'required',
             'audioID' => 'required',
             'pageNum' => 'required',
             'imageID' => 'required',
@@ -67,7 +67,7 @@ class PageController extends Controller
     public function update(Request $request, Int $id)
     {
         $validator = Validator::make($request->all(), [
-            'text' =>  'required',
+            'textID' =>  'required',
             'audioID' => 'required',
             'pageNum' => 'required',
             'imageID' => 'required',

@@ -9,7 +9,7 @@ class Page extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'text',
+        'textID',
         'audioID',
         'pageNum',
         'imageID',
