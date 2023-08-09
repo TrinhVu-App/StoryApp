@@ -11,7 +11,7 @@ class Touchable extends Model
 
     protected $fillable = [
         'pageID',
-        'name',
+        'textID',
         'audioID',
         'imageID',
         'height',

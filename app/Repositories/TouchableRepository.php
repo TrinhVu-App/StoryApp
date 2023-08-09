@@ -44,7 +44,7 @@ class TouchableRepository implements TouchableRepositoryInterface {
     {
         $newTouchable = Touchable::create([
             'pageID' => $request->pageID,
-            'name' => $request->name,
+            'textID' => $request->textID,
             'audioID' => $request->audioID,
             'imageID' => $request->imageID,
             'height' => $request->height,

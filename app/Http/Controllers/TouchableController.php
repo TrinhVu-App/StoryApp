@@ -36,6 +36,7 @@ class TouchableController extends Controller {
         $validator = Validator::make($request->all(), [
             'pageID' => 'required',
             'audioID' => 'required',
+            'texdID' => 'required',
             'imageID'=>'required',
             'height' => 'required',
             'width' => 'required',
@@ -57,6 +58,7 @@ class TouchableController extends Controller {
         $validator = Validator::make($request->all(), [
             'pageID' => 'required',
             'audioID' => 'required',
+            'textID' => 'required',
             'imageID'=>'required',
             'height' => 'required',
             'width' => 'required',
