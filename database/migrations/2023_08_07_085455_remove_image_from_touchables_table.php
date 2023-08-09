@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('listing', function (Blueprint $table) {
-            $table->id();
-            $table->string('');
+        Schema::table('touchables', function (Blueprint $table) {
+            $table->dropConstrainedForeignId('imageID');
         });
     }
 
@@ -22,6 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('listing');
+        Schema::table('touchables', function (Blueprint $table) {
+            $table->unsignedBigInteger('imageID');
+            $table->foreign('imageID')->references('id')->on('images');
+        });
     }
 };
