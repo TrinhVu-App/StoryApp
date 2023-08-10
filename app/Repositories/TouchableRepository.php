@@ -98,13 +98,14 @@ class TouchableRepository implements TouchableRepositoryInterface {
         return [$result, 200];
     }
 
-    public function getTouchablesByPageID(int $id)
+    public function getTouchablesByPageID($id)
     {
-        $touchable = Touchable::where('pageID','=', $id)->get();
+        $touchables = Touchable::where('pageID','=', $id)->get();
 
-        if($touchable->count() <=0 ) {
+        if($touchables->count() <=0 ) {
             return ['Cant find any touchable for that pageID!', 404];
         }
-        return [$touchable, 200];
+
+        return [$touchables, 200];
     }
 }

@@ -33,5 +33,4 @@ class Story extends Model
         return $this->users()->orderBy('name')->get();
     }
 
-
 }

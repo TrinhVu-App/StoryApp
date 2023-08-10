@@ -79,5 +79,11 @@ class StoryController extends Controller
         $result = $this->storyRepository->deleteStory($id);
         return response()->json($result[0], $result[1]);
     }
+
+    public function getFull($id) {
+        $result = $this->storyRepository->getFullStory($id);
+      //  return response()->json($result[0], $result[1]);
+        return response()->json($result);
+    }
 }
 

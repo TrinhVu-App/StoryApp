@@ -22,7 +22,7 @@ Route::get('/image/{id}', [ImageController::class, 'show']);
 //routing for touchables
 Route::get('/page/touchable/', [TouchableController::class, 'index']);
 Route::get('/page/touchable/{id}', [TouchableController::class, 'show']);
-Route::get('/page/touchable/pageID{id}', [TouchableController::class, 'showByPageID']);
+Route::get('/page/touchable/pageID/{id}', [TouchableController::class, 'showByPageID']);
 Route::post('/page/touchable/create', [TouchableController::class, 'store']);
 Route::post('/page/touchable/{id}/edit', [TouchableController::class, 'edit']);
 Route::put('/page/touchable/{id}/edit', [TouchableController::class, 'update']);
@@ -45,6 +45,7 @@ Route::post('/create', [StoryController::class, 'store']);
 Route::post('/{id}/edit', [StoryController::class, 'edit']);
 Route::put('/{id}/edit', [StoryController::class, 'update']);
 Route::delete('/{id}/delete', [StoryController::class, 'destroy']);
+Route::get('/full/{id}', [StoryController::class, 'getFull']);
 
 //routing for Images listing/details
 

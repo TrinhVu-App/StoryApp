@@ -95,4 +95,18 @@ class StoryRepository implements StoryRepositoryInterface {
         }
         return [$story, 200];
     }
+    public function getFullStory($id) {
+        $story = Story::find($id);
+        if ($story===null) {
+            return ['Story not found', 404];
+        }
+
+        $pages = $this->pageRepository->getPagesByStoryID($id);
+
+        $result = [
+            'story' => $story,
+            'pages' => $pages[0]
+        ];
+        return [$result, 200];
+    }
 }

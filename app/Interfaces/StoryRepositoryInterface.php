@@ -12,5 +12,7 @@ interface StoryRepositoryInterface {
     public function updateStory(Request $request, int $id);
     public function editStory(int $id);
 
+    public function getFullStory($id);
+
 
 }

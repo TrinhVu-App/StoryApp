@@ -107,10 +107,23 @@ class PageRepository implements PageRepositoryInterface {
     public function getPagesByStoryID(int $id)
     {
         $pages = Page::where('storyID','=', $id)->get();
-
         if($pages->count() <=0 ) {
             return ['Cant find any pages for that storyID!', 404];
         }
-        return [$pages, 200];
+        $result = [];
+        foreach($pages as $thisPage) {
+            $touchables = $this->touchableRepository->getTouchablesByPageID($thisPage->id);
+            $page = [
+                'page' => $thisPage,
+                'touchables' => $touchables[0]
+            ];
+          $result[] = $page;
+        }
+
+//        $result = [
+//            "pages" => $pages,
+//            "touchables" => $touchables
+//        ];
+        return [$result, 200];
     }
 }

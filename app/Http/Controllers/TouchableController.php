@@ -83,7 +83,7 @@ class TouchableController extends Controller {
 
     public function showByPageID($id) {
         $result = $this->touchableRepository->getTouchablesByPageID($id);
-        return response()->json($result[0],$result[1]);
+        return response()->json($result);
     }
 
     public function destroyByPageID($id){
