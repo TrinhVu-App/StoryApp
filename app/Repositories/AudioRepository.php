@@ -13,7 +13,6 @@ class AudioRepository implements AudioRepositoryInterface
     public function getAllAudios()
     {
         $result = Audio::all();
-
         if ($result->count() <= 0) {
             return ['No Audio Found! Rerun the seeder', 404];
         }

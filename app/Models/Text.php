@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Text extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
 
     protected $fillable =[
         'audioID',
@@ -25,5 +27,11 @@ class Text extends Model
 
     public function getPages() {
         return $this->orderBy('id')->get();
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnlyDirty();
     }
 }
