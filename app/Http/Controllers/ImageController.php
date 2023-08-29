@@ -24,6 +24,7 @@ class ImageController extends Controller
     public function show($id)
     {
         $result = $this->imageRepository->getImageByID($id);
-        return response()->json($result[0], $result[1]);
+        $image = $result[0];
+        return response()->file(public_path("/storage/images/" . $image->name));
     }
 }
