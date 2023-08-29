@@ -24,7 +24,9 @@ class StoryFactory extends Factory
             'like' => $this->faker->numberBetween(0, 2000),
             'read' => $this->faker->boolean(),
             'listen' => $this->faker->boolean(),
-            'practice' => $this->faker->boolean()
+            'practice' => $this->faker->boolean(),
+            'thumbnail' => $this->faker->numberBetween(2, 6),
+            'level' => $this->faker->randomKey(['A', 'B', 'C'])
         ];
     }
 }

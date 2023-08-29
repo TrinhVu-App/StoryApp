@@ -19,8 +19,8 @@ class ImageSeeder extends Seeder
         foreach ($images as $image) {
             DB::table('images')->insert([
                 'name' => $image,
-                'src' => $imageDir . "/" . $image,
-                'url' => asset($imageDir . "/" . $image)
+                'src' => "/storage/images/" . $image,
+                'url' => asset("/storage/images/" . $image)
             ]);
         }
     }
