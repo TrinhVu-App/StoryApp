@@ -48,15 +48,38 @@ class StoryRepository implements StoryRepositoryInterface {
     }
     public function createStory(Request $request)
     {
+        $read= false;
+        $listen=false;
+        $practice=false;
+        $like = 0;
+        $thumbnail = rand(1, 5);
+
+        if($request->like) {
+            $like = $request->like;
+        }
+        if($request->read) {
+            $read = $request->read;
+        }
+        if($request->listen) {
+            $listen = $request->listen;
+        }
+        if ($request->practice) {
+            $practice = $request->practice;
+        }
+        if ($request->thumbnail) {
+            $thumbnail = $request->thumbnail;
+        }
         $newStory = Story::create([
             'storyName' => $request->storyName,
             'author' => $request->author,
             'illustrator' => $request->illustrator,
             'price' => $request->price,
-            'like' => $request->like,
-            'read' => $request->read,
-            'listen' => $request->listen,
-            'practice' => $request->practice
+            'like' => $like,
+            'level' => $request->level,
+            'read' => $read ,
+            'listen' => $listen,
+            'practice' => $practice,
+            'thumbnail' => $thumbnail
         ]);
 
         if($newStory) {

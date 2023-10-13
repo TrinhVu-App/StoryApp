@@ -27,4 +27,16 @@ class ImageController extends Controller
         $image = $result[0];
         return response()->file(public_path("/storage/images/" . $image->name));
     }
+
+    public function uploadImage(Request $request)
+    {
+        if (!$request->hasFile('image')) {
+            return response()->json("Select an image to upload", 400);
+        }
+
+        $image = $request->file('image');
+        $storedPath = $image->move('image', $image->getClientOriginalName());
+
+        return response()->json("image uploaded", 201);
+    }
 }

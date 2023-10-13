@@ -26,7 +26,7 @@ class StoryFactory extends Factory
             'listen' => $this->faker->boolean(),
             'practice' => $this->faker->boolean(),
             'thumbnail' => $this->faker->numberBetween(2, 6),
-            'level' => $this->faker->randomKey(['A', 'B', 'C'])
+            'level' => $this->faker->randomElement(['A', 'B', 'C'])
         ];
     }
 }

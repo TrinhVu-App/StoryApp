@@ -20,6 +20,7 @@ class AudioController extends Controller
 
     public function show($id){
         $result = $this->audioRepository->getAudioByID($id);
-        return response()->json($result[0], $result[1]);
+        $audio = $result[0];
+        return response()->file(public_path("/storage/audios/" . $audio->name));
     }
 }

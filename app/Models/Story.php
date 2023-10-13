@@ -21,7 +21,9 @@ class Story extends Model
         'like',
         'read',
         'listen',
-        'practice'
+        'practice',
+        'thumbnail',
+        'level'
     ];
 
 

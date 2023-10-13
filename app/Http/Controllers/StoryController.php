@@ -38,10 +38,11 @@ class StoryController extends Controller
             'author' => 'required',
             'illustrator' => 'required',
             'price' => 'required',
-            'like'=> 'required',
-            'read' => 'required',
-            'listen' => 'required',
-            'practice' => 'required'
+//            'like'=> 'required',
+            'level' => 'required'
+//            'read' => 'required',
+//            'listen' => 'required',
+//            'practice' => 'required'
         ]);
 
         if($validator-> fails()) {
@@ -56,7 +57,7 @@ class StoryController extends Controller
     public function update(int $id, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'storyName' => ['required', Rule::unique('stories', 'storyName')],
+            'storyName' => 'required',
             'author' => 'required',
             'illustrator' => 'required',
             'price' => 'required',
